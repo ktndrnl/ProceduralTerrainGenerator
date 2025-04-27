@@ -1,0 +1,66 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MenuStyle.uss?fileID=7433441132597879392&amp;guid=3a7bace81de9d6a4098716c3cf570ab0&amp;type=3#MenuStyle" />
+    <engine:VisualElement name="MenuContainer" enabled="true" style="flex-grow: 1; -unity-text-outline-color: rgba(0, 0, 0, 0); background-color: rgba(0, 0, 0, 0.7); margin-top: 40px; margin-bottom: 40px; margin-left: 20px; width: 512px; margin-right: 20px; padding-top: 20px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: auto; transition-timing-function: ease-out-cubic; transition-duration: 0.5s;">
+        <engine:Label text="World Settings" name="Header" class="header" style="font-size: 32px; -unity-text-align: upper-center;" />
+        <engine:VisualElement style="flex-grow: 1; align-items: stretch; justify-content: flex-start; align-self: auto; align-content: flex-start; flex-direction: column;">
+            <engine:VisualElement name="NoiseSettingsElement" data-source="project://database/Assets/Terrain%20Assets/HeightMapSettings.asset?fileID=11400000&amp;guid=a5e586dfbc96af54ea990db389521730&amp;type=2#HeightMapSettings" style="flex-grow: 1;">
+                <engine:Label text="Noise Settings" name="NoiseSettings" class="header-2" />
+                <engine:IntegerField label="Seed" value="0" name="Seed" focusable="true" data-source-path="noiseSettings.seed">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="noiseSettings.seed" data-source="project://database/Assets/Terrain%20Assets/HeightMapSettings.asset?fileID=11400000&amp;guid=a5e586dfbc96af54ea990db389521730&amp;type=2#HeightMapSettings" binding-mode="ToSource" />
+                    </Bindings>
+                </engine:IntegerField>
+                <engine:IntegerField label="Scale" value="50" name="Scale" focusable="true" data-source-path="noiseSettings.scale">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="noiseSettings.scale" data-source="project://database/Assets/Terrain%20Assets/HeightMapSettings.asset?fileID=11400000&amp;guid=a5e586dfbc96af54ea990db389521730&amp;type=2#HeightMapSettings" binding-mode="ToSource" />
+                    </Bindings>
+                </engine:IntegerField>
+                <engine:Slider label="Persistence" value="0.5" high-value="1" name="Persistence" data-source-path="noiseSettings.persistence">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="noiseSettings.persistence" data-source="project://database/Assets/Terrain%20Assets/HeightMapSettings.asset?fileID=11400000&amp;guid=a5e586dfbc96af54ea990db389521730&amp;type=2#HeightMapSettings" binding-mode="ToSource" />
+                        <engine:DataBinding property="tooltip" data-source-path="noiseSettings.persistence" data-source="project://database/Assets/Terrain%20Assets/HeightMapSettings.asset?fileID=11400000&amp;guid=a5e586dfbc96af54ea990db389521730&amp;type=2#HeightMapSettings" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:Slider>
+                <engine:FloatField label="Lacunarity" value="2.5" name="Lacunarity" data-source-path="noiseSettings.lacunarity">
+                    <Bindings>
+                        <engine:DataBinding property="value" binding-mode="ToSource" />
+                    </Bindings>
+                </engine:FloatField>
+                <engine:Vector2Field label="Offset" name="Offset" data-source-path="noiseSettings.offset">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="noiseSettings.offset" data-source="project://database/Assets/Terrain%20Assets/HeightMapSettings.asset?fileID=11400000&amp;guid=a5e586dfbc96af54ea990db389521730&amp;type=2#HeightMapSettings" binding-mode="ToSource" />
+                    </Bindings>
+                </engine:Vector2Field>
+                <engine:DropdownField label="Normalize Mode" name="NormalizeMode" choices="Global,Local" index="0" enabled="false" style="display: none;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="MeshSettingsElement" data-source="project://database/Assets/Terrain%20Assets/MeshSettings.asset?fileID=11400000&amp;guid=0fa49fc47514190418f7e86c02b302e6&amp;type=2#MeshSettings" style="flex-grow: 1;">
+                <engine:Label text="Mesh Settings" name="MeshSettings" class="header-2" />
+                <engine:FloatField label="Mesh Scale" value="2" name="MeshScale">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="meshScale" binding-mode="ToSource" update-trigger="OnSourceChanged" />
+                    </Bindings>
+                </engine:FloatField>
+                <engine:Toggle label="Use Flat Shading" name="UseFlatShading" data-source-path="useFlatShading" value="true">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="useFlatShading" data-source="project://database/Assets/Terrain%20Assets/MeshSettings.asset?fileID=11400000&amp;guid=0fa49fc47514190418f7e86c02b302e6&amp;type=2#MeshSettings" binding-mode="ToSource" />
+                    </Bindings>
+                </engine:Toggle>
+                <engine:SliderInt label="Chunk Size Index" value="2" high-value="2" name="ChunkSizeIndex" data-source-path="chunkSizeIndex" enabled="true" style="display: none;">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="chunkSizeIndex" data-source="project://database/Assets/Terrain%20Assets/MeshSettings.asset?fileID=11400000&amp;guid=0fa49fc47514190418f7e86c02b302e6&amp;type=2#MeshSettings" binding-mode="ToSource" />
+                        <engine:DataBinding property="tooltip" data-source-path="chunkSizeIndex" data-source="project://database/Assets/Terrain%20Assets/MeshSettings.asset?fileID=11400000&amp;guid=0fa49fc47514190418f7e86c02b302e6&amp;type=2#MeshSettings" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:SliderInt>
+                <engine:SliderInt label="Flat Shaded Chunk Size Index" value="42" high-value="2" name="ChunkSizeIndexFlatShaded" data-source-path="flatShadedChunkSizeIndex" style="display: none;">
+                    <Bindings>
+                        <engine:DataBinding property="value" data-source-path="flatShadedChunkSizeIndex" data-source="project://database/Assets/Terrain%20Assets/MeshSettings.asset?fileID=11400000&amp;guid=0fa49fc47514190418f7e86c02b302e6&amp;type=2#MeshSettings" binding-mode="ToSource" />
+                        <engine:DataBinding property="tooltip" data-source-path="flatShadedChunkSizeIndex" data-source="project://database/Assets/Terrain%20Assets/MeshSettings.asset?fileID=11400000&amp;guid=0fa49fc47514190418f7e86c02b302e6&amp;type=2#MeshSettings" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:SliderInt>
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:Button text="Update" name="UpdateButton" />
+        <engine:Label text="Press ESC to open/close menu. Hold RMB and use WASD to move." name="Tooltip" style="margin-top: 8px;" />
+    </engine:VisualElement>
+    <engine:Label text="Press ESC to open/close menu.&#10;Hold RMB and use WASD to move." name="MenuHint" enabled="false" style="display: flex; visibility: visible; position: absolute; bottom: 0; left: 0; padding-left: 40px; padding-bottom: 40px; font-size: 24px; color: rgba(255, 255, 255, 0.6); transition-timing-function: ease-out-cubic; transition-duration: 0.5s; transition-delay: 0s;" />
+</engine:UXML>

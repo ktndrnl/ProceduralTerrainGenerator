@@ -1,0 +1,28 @@
+.header {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.unity-label {
+    color: rgb(255, 255, 255);
+}
+
+.header-2 {
+    -unity-text-align: upper-left;
+    font-size: 24px;
+}
+
+#MenuContainer:disabled {
+    position: relative;
+    opacity: 0.5;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0s;
+    translate: -560px 0;
+}
+
+#MenuHint:disabled {
+    translate: 0 100px;
+    transition-timing-function: ease;
+    transition-duration: 0s;
+    transition-delay: 0s;
+}
