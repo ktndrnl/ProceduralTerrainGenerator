@@ -12,6 +12,9 @@ It dynamically creates and manages terrain chunks as the player explores an endl
 * **User Configurable Parameters:** Real-time adjustment of procedural settings (seed, scale, persistence, lacunarity, and offset) via an in-game UI menu.
 * **Efficient Resource Management:** Designed to handle expansive, infinite environments without stuttering or major performance degradation.
 
+## Video Demo
+https://github.com/user-attachments/assets/049e73c6-39b3-4d79-8357-aa35840df2b2
+
 ## How to Run
 1.	Open the project in Unity (created with Unity version `6000.0.34f1`).
 2.	Open the Main scene.
