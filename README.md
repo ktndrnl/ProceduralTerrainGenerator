@@ -22,6 +22,9 @@ https://github.com/user-attachments/assets/049e73c6-39b3-4d79-8357-aa35840df2b2
 4.	Hold right mouse button and use WASD to fly around the world.
 5. The settings menu is opened by default and can be open and closed with `TAB` to adjust terrain parameters.
 
+Alternatively download the latest [build](https://github.com/ktndrnl/ProceduralTerrainGenerator/releases).\
+WebGL does not support C#'s multithreading so a WebGL build is unavailable.
+
 ## Technical Overview
 * Noise Algorithm: Layered Perlin noise for heightmap generation.
 * Multithreading: Threading system handles terrain data generation to prevent frame rate drops.
