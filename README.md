@@ -1,4 +1,6 @@
 # Procedural Terrain Generator
+![image](https://github.com/user-attachments/assets/6d4b76fb-5609-4b84-b76a-af551938688a)
+
 ## Overview
 This project is a real-time, infinite procedural terrain generator built using Unity.
 It dynamically creates and manages terrain chunks as the player explores an endless world, focusing on performance, scalability, and customizable terrain generation parameters.
